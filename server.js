@@ -7,11 +7,13 @@ const dotenv = require('dotenv')
 dotenv.config()
 const app = express();
 
+const routAuthentication = require("./routes/AuthenticationRoute");
 const adminRoutes = require('./routes/admin')
 
 app.use(bodyParser.json());
 app.use(cors());
 
+app.use(routAuthentication);
 app.use(adminRoutes);
 
 const PORT =8000;
