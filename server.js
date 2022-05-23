@@ -7,12 +7,18 @@ const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
 
+
 const adminRoutes = require("./routes/admin");
 const researchGroupRoutes = require("./routes/ResearchGroupRoutes");
+
+const routAuthentication = require("./routes/AuthenticationRoute");
+
+
 
 app.use(bodyParser.json());
 app.use(cors());
 
+app.use(routAuthentication);
 app.use(adminRoutes);
 app.use(researchGroupRoutes);
 
