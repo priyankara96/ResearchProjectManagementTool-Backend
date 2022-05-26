@@ -10,6 +10,7 @@ const app = express();
 
 const adminRoutes = require("./routes/admin");
 const researchGroupRoutes = require("./routes/ResearchGroupRoutes");
+const submissionRoutes = require("./routes/StudentSubmissionRoutes");
 
 const routAuthentication = require("./routes/AuthenticationRoute");
 
@@ -21,6 +22,7 @@ app.use(cors());
 app.use(routAuthentication);
 app.use(adminRoutes);
 app.use(researchGroupRoutes);
+app.use(submissionRoutes);
 
 const PORT = 8000;
 
