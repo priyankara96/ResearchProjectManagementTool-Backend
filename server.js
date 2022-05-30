@@ -12,7 +12,8 @@ const adminRoutes = require("./routes/admin");
 const researchGroupRoutes = require("./routes/ResearchGroupRoutes");
 
 const routAuthentication = require("./routes/AuthenticationRoute");
-
+const staffRoutes = require('./routes/staff');
+const panelRoutes = require('./routes/panel');
 
 
 app.use(bodyParser.json());
@@ -21,6 +22,8 @@ app.use(cors());
 app.use(routAuthentication);
 app.use(adminRoutes);
 app.use(researchGroupRoutes);
+app.use(staffRoutes);
+app.use(panelRoutes);
 
 const PORT = 8000;
 
