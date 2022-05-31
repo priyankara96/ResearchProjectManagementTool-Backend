@@ -14,6 +14,7 @@ const submissionRoutes = require("./routes/StudentSubmissionRoutes");
 const routAuthentication = require("./routes/AuthenticationRoute");
 const staffRoutes = require('./routes/staff');
 const panelRoutes = require('./routes/panel');
+const panelsheduleRoutes = require('./routes/panelshedule');
 
 
 app.use(bodyParser.json());
@@ -28,6 +29,7 @@ app.use(researchGroupRoutes);
 app.use(staffRoutes);
 app.use(panelRoutes);
 app.use(submissionRoutes);
+app.use(panelsheduleRoutes);
 
 const PORT = 8000;
 
