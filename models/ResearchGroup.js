@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 const researchGroupSchema = new mongoose.Schema({
+  groupID:{
+    type:String
+  },
   leaderName: {
     type: String,
     required: true,

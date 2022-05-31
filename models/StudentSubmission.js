@@ -5,6 +5,10 @@ const submissionSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  subject: {
+    type: String,
+    required: true,
+  },
   submitURL: {
     type: String,
     required: true,
