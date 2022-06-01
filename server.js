@@ -10,20 +10,17 @@ const app = express();
 const adminRoutes = require("./routes/admin");
 const researchGroupRoutes = require("./routes/ResearchGroupRoutes");
 const submissionRoutes = require("./routes/StudentSubmissionRoutes");
-const resourceRoutes = require("./routes/resources")
+const resourceRoutes = require("./routes/resources");
 const routAuthentication = require("./routes/AuthenticationRoute");
-const staffRoutes = require('./routes/staff');
-const panelRoutes = require('./routes/panel');
-const panelsheduleRoutes = require('./routes/panelshedule');
+const staffRoutes = require("./routes/staff");
+const panelRoutes = require("./routes/panel");
+const panelsheduleRoutes = require("./routes/panelshedule");
+const researchTopicRoutes = require("./routes/ResearchTopicRoutes");
 
-const markingRoutes = require('./routes/marking');
-
+const markingRoutes = require("./routes/marking");
 
 app.use(bodyParser.json());
 app.use(cors());
-
-
-
 
 app.use(routAuthentication);
 app.use(adminRoutes);
@@ -33,6 +30,7 @@ app.use(panelRoutes);
 app.use(submissionRoutes);
 app.use(panelsheduleRoutes);
 app.use(resourceRoutes);
+app.use(researchTopicRoutes);
 
 app.use(markingRoutes);
 
