@@ -14,6 +14,7 @@ const resourceRoutes = require("./routes/resources")
 const routAuthentication = require("./routes/AuthenticationRoute");
 const staffRoutes = require('./routes/staff');
 const panelRoutes = require('./routes/panel');
+const markingRoutes = require('./routes/marking')
 
 
 app.use(bodyParser.json());
@@ -29,6 +30,7 @@ app.use(staffRoutes);
 app.use(panelRoutes);
 app.use(submissionRoutes);
 app.use(resourceRoutes);
+app.use(markingRoutes);
 
 const PORT = 8000;
 
