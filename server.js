@@ -16,6 +16,8 @@ const staffRoutes = require('./routes/staff');
 const panelRoutes = require('./routes/panel');
 const panelsheduleRoutes = require('./routes/panelshedule');
 
+const markingRoutes = require('./routes/marking');
+
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -31,6 +33,8 @@ app.use(panelRoutes);
 app.use(submissionRoutes);
 app.use(panelsheduleRoutes);
 app.use(resourceRoutes);
+
+app.use(markingRoutes);
 
 const PORT = 8000;
 
