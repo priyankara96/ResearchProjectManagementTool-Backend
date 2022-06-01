@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
 const adminSchema = new mongoose.Schema({
 
-   name: {
+   gid: {
+       type: String,
+       required: true,
+       trim: true
+   },
+
+    name: {
        type: String,
        required: true,
        trim: true
@@ -15,7 +21,13 @@ const adminSchema = new mongoose.Schema({
    time: {
        type: String,
        required: true
-   }
+   },
+   link: {
+       type: String,
+       required: true
+   },
+   
+   
   
    
 
