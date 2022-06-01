@@ -27,18 +27,6 @@ router.post("/submission", async (req, res) => {
   }
 });
 
-//Render submissions for specific user
-// router.get("/submission/:userID", async (req, res) => {
-//   try {
-//     const submit = await Submission.find(req.params);
-//     res.json(submit);
-//    // console.log("result , ", submit);
-//   } catch (err) {
-//     console.log("error in get submissions", err);
-//     res.status(204).send({ message: "failed", data: err });
-//   }
-// });
-
 //Render the submission uploaded at the moment
 router.get("/mysubmission/:id", async (req, res) => {
   try {
@@ -56,7 +44,22 @@ router.get("/submissions", async (req, res) => {
     const allSubmissions = await Submission.find(req.params);
     res.json(allSubmissions);
   } catch (err) {
-    console.log("error in get enrolled courses", err);
+    console.log("error in get submissions", err);
+    res.status(204).send({ message: "failed", data: err });
+  }
+});
+
+//update student submission-by supervisor
+router.put("/submission/:id", async (req, res) => {
+  try {
+    const updatedSubmission = await Submission.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    res.json(updatedSubmission);
+  } catch (err) {
+    console.log("error in updating submission", err);
     res.status(204).send({ message: "failed", data: err });
   }
 });

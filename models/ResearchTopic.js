@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 
-const submissionSchema = new mongoose.Schema({
+const researchTopic = new mongoose.Schema({
   groupID: {
     type: String,
     required: true,
   },
-  subject: {
+  researchTopic: {
     type: String,
     required: true,
   },
-  submitURL: {
+  description: {
     type: String,
     required: true,
   },
@@ -17,8 +17,11 @@ const submissionSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  mark: {
-    type: Number,
+  status: {
+    type: String,
+  },
+  feedback: {
+    type: String,
   },
   userID: {
     type: String,
@@ -26,4 +29,4 @@ const submissionSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Submissions", submissionSchema);
+module.exports = mongoose.model("ResearchTopics", researchTopic);
