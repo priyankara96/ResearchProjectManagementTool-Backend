@@ -3,9 +3,9 @@ const CommonSignup = require("../Models/CommonSignup");
 const jwt = require("jsonwebtoken");
 
 
-//User Data
+//User Data 
 
-//Insert
+//Insert 
 router.post("/CommonSignup", async (req, res) => {
   try {
     
@@ -40,7 +40,7 @@ router.get("/CommonSignup", async (_, res) => {
 
 
 
-//Update
+//Update 
 router.put("/CommonSignup/update/:id", async (req, res) => {
   try {
     const updateCommonSignup = await CommonSignup.findByIdAndUpdate(req.params.id,req.body, {new:true});
@@ -53,7 +53,7 @@ router.put("/CommonSignup/update/:id", async (req, res) => {
 });
 
 
-//Delete
+//Delete 
 router.delete("/CommonSignup/:id", async (req, res) => {
   try {
     const deleteCommonSignup = await CommonSignup.findByIdAndDelete(
@@ -68,7 +68,7 @@ router.delete("/CommonSignup/:id", async (req, res) => {
 });
 
 
-// login
+// login 
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -113,7 +113,7 @@ router.post("/login", async (req, res) => {
 
 
 
-// Update All Data
+// Update All Data 
 router.route('/AllData/update/:id').put((req, res) => {
   CommonSignup.findById(req.params.id)
       .then(alldata => {

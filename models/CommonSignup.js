@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Schema to signup to users
 const CommonSignupSchema = new mongoose.Schema ({
     name:{
         type: String,
